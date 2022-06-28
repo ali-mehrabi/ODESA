@@ -16,7 +16,7 @@ module L2_train
  output [4*(2*p_width+1)-1:0] o_thresholds
  );
 
-parameter p_deltaT = 10'h0f;
+parameter p_deltaT = 10'h1f;
 parameter p_default_thr = 19'h0_1f_ff;
 parameter p_default_w = 9'h03f;//{p_width{1'b1}};
 parameter p_epochs = 5000;
@@ -160,7 +160,7 @@ begin
   else
      case(r_state)
 	  0:begin
-	      if(w_pass_l2) //r_training_active && 
+	      if(w_pass_l2) 
 		    r_state<= 1;
 	    end	 
 	  1:begin
